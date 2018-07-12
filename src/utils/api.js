@@ -1,10 +1,8 @@
 
-// const API_URL = process.env.REACT_APP_API_URL;
-// const API_KEY = process.env.REACT_APP_API_KEY;
+const API_URL = process.env.REACT_APP_API_URL;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
-const API_URL = "http://localhost:3001";
-const API_KEY = "foo";
-const FETCH_OPTIONS = {
+const GET_OPTIONS = {
     method: 'get',
     headers: new Headers({
         'Authorization': API_KEY
@@ -12,5 +10,9 @@ const FETCH_OPTIONS = {
 };
 
 export function getAllPosts () {
-  return fetch(`${API_URL}/posts/`, FETCH_OPTIONS );
+  return fetch(`${API_URL}/posts/`, GET_OPTIONS );
 }
+
+export function getAllCategories () {
+    return fetch(`${API_URL}/categories/`, GET_OPTIONS );
+  }

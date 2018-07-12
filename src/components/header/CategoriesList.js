@@ -1,20 +1,20 @@
 import React from 'react';
 import Loading from 'react-loading';
 import PropTypes from 'prop-types';
-import PostListRow from "./PostListRow";
+import CategoriesListRow from "./CategoriesListRow";
 
-const PostsList = ({error, loading, posts}) => (
+const CategoriesList = ({error, loading, categories}) => (
 
     error ? <div>Error loading data from the API: {error.message}</div> :
     loading ? <Loading delay={200} type='spin' color='#222' className='loading' /> :
-    posts.map( post => <PostListRow post={post} />)
+    categories.map( category => <CategoriesListRow category={category} />)
 
 )
 
-PostsList.propTypes = {
+CategoriesList.propTypes = {
     error: PropTypes.object.isRequired,
     loading: PropTypes.bool.isRequired,
-    posts: PropTypes.array.isRequired
+    categories: PropTypes.array.isRequired
 }
 
-export default PostsList;
+export default CategoriesList;
